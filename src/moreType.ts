@@ -44,7 +44,7 @@ try {
 const data:unknown = "Chai aur code"
 const strData: string = data as string
 
-type Role = "admin" | "user |superadmin"
+type Role = "admin" | "user"|"superadmin";
 
 function redirectBasedOnRole(role: Role): void {
 
