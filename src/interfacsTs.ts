@@ -1,0 +1,93 @@
+type ChaiOrder ={
+    type:string;
+    sugar:number;
+    strong:boolean;
+};
+
+function makeChai(order:ChaiOrder){
+    console.log(order);
+}
+
+function serveChai(order:ChaiOrder){
+    console.log(order);
+}
+
+type TeaRecipe ={
+    water:number;
+    milk:number;
+};
+// interface TeaRecipe {
+//     water:number;
+//     milk:number;
+// };
+
+// class MasalaChai implements TeaRecipe{
+//     water =100;
+//     milk =50;
+
+// }
+
+interface CupSize {
+    size:"small" | "large"
+}
+
+class Chai implements CupSize{
+    size: "small" | "large"= "large";
+
+}
+
+// type Response = {ok: true} | {ok: false};
+
+// class myRes implements Response{
+//     ok: boolean = true;
+// }
+
+
+//Note: This code is commented out in the image. 
+// Also, if you uncomment it, TypeScript will give an error because a class cannot implement 
+// a union type like:
+interface Response {
+    ok: boolean;
+}
+
+class MyRes implements Response {
+    ok: boolean = true;
+}
+
+type TeaType ="masala" |"ginger"|"lemon"
+
+function orderChai(t:TeaType){
+    console.log(t);
+}
+
+type BaseChai = {teaLeaves: number}
+type Extra = {masala:number}
+
+type MasalaChai = BaseChai & Extra
+
+const cup: MasalaChai ={
+    teaLeaves: 2,
+    masala: 1
+}
+
+type User = {
+    username: string;
+    bio?: string;
+}
+
+const u1: User = { username: "Hitesh" }
+
+const u2: User = { username: "Hitesh", bio: "hitesh.ai" }
+
+type Config = {
+    readonly appName: string
+    version: number
+}
+
+const cfg: Config = {
+    appName: "Masterji",
+    version: 1
+}
+
+
+//cfg.appName = "ChaiCode"
